@@ -1,0 +1,17 @@
+// Load in modules
+ 
+const Scene =  require('Scene');
+const FaceTracking = require('FaceTracking');
+ 
+// Enable async/wait
+(async function(){
+ 
+// Find metal title object
+const metal = await Scene.root.findFirst('metal');
+ 
+// Create a reference of the face
+const metal = FaceTracking.face(0);
+ 
+// Bind signal rotations
+metal.transform.rotation = metal.cameraTransform.rotation;
+})();
